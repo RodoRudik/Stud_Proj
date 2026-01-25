@@ -1,0 +1,16 @@
+body{
+    background-color: black;
+}
+.meme{
+    color: white;
+    text-align: center;
+    font-family: "libre baskerville", serif ;
+}
+.shrek-img{
+    border: 5px solid white;
+    width: 20%;
+}
+h1{
+    text-transform: uppercase;
+    font-size: 3rem;
+}
