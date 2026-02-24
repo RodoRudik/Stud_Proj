@@ -1,0 +1,95 @@
+[33mcommit 21b5d19208633704d62cb5de4432b6f03f7f6998[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Rodolfo <rodolfowb32@gmail.com>
+Date:   Sun Jan 25 23:41:18 2026 +0300
+
+    lecciones completas de CSS
+
+ CSS/5.1+Adding+CSS.zip                             | Bin [31m0[m -> [32m3160[m bytes
+ CSS/5.1. Adding CSS/Solution/external.html         |  14 [32m+++++[m
+ CSS/5.1. Adding CSS/Solution/inline.html           |  13 [32m++++[m
+ CSS/5.1. Adding CSS/Solution/internal.html         |  18 [32m++++++[m
+ CSS/5.1. Adding CSS/Solution/solution.html         |  17 [32m++++++[m
+ CSS/5.1. Adding CSS/Solution/style.css             |   3 [32m+[m
+ CSS/5.1. Adding CSS/external.html                  |  11 [32m++++[m
+ CSS/5.1. Adding CSS/index.html                     |  17 [32m++++++[m
+ CSS/5.1. Adding CSS/inline.html                    |  13 [32m++++[m
+ CSS/5.1. Adding CSS/internal.html                  |  18 [32m++++++[m
+ CSS/5.1. Adding CSS/style.css                      |   3 [32m+[m
+ CSS/5.3 CSS Selectors/goal.png                     | Bin [31m0[m -> [32m158827[m bytes
+ CSS/5.3 CSS Selectors/index.html                   |  32 [32m++++++++++[m
+ CSS/5.3 CSS Selectors/solution/solution-style.css  |  34 [32m+++++++++++[m
+ CSS/5.3 CSS Selectors/solution/solution.html       |  32 [32m++++++++++[m
+ CSS/5.3 CSS Selectors/style.css                    |  26 [32m++++++++[m
+ CSS/5.3+CSS+Selectors.zip                          | Bin [31m0[m -> [32m141393[m bytes
+ CSS/5.4-Color-Vocab-Project.zip                    | Bin [31m0[m -> [32m894755[m bytes
+ CSS/5.4_color_vocav_project/assets/images/blue.png | Bin [31m0[m -> [32m144[m bytes
+ .../assets/images/green.png                        | Bin [31m0[m -> [32m415[m bytes
+ .../assets/images/orange.png                       | Bin [31m0[m -> [32m815[m bytes
+ CSS/5.4_color_vocav_project/assets/images/red.png  | Bin [31m0[m -> [32m144[m bytes
+ .../assets/images/yellow.png                       | Bin [31m0[m -> [32m3755[m bytes
+ CSS/5.4_color_vocav_project/goal.png               | Bin [31m0[m -> [32m1157302[m bytes
+ CSS/5.4_color_vocav_project/index.html             |  42 [32m+++++++++++++[m
+ .../solution/assets/images/blue.png                | Bin [31m0[m -> [32m144[m bytes
+ .../solution/assets/images/green.png               | Bin [31m0[m -> [32m415[m bytes
+ .../solution/assets/images/orange.png              | Bin [31m0[m -> [32m815[m bytes
+ .../solution/assets/images/red.png                 | Bin [31m0[m -> [32m144[m bytes
+ .../solution/assets/images/yellow.png              | Bin [31m0[m -> [32m3755[m bytes
+ CSS/5.4_color_vocav_project/solution/solution.html |  27 [32m+++++++++[m
+ CSS/5.4_color_vocav_project/solution/style.css     |  28 [32m+++++++++[m
+ CSS/5.4_color_vocav_project/style.css              |  22 [32m+++++++[m
+ CSS/6.0 CSS Colors/goal.png                        | Bin [31m0[m -> [32m48258[m bytes
+ CSS/6.0 CSS Colors/index.html                      |  27 [32m+++++++++[m
+ CSS/6.0 CSS Colors/solution.html                   |  29 [32m+++++++++[m
+ CSS/6.0 CSS Colors/style.css                       |   0
+ CSS/6.0-CSS-Colors.zip                             | Bin [31m0[m -> [32m18783[m bytes
+ CSS/6.1-Font-Properties.zip                        | Bin [31m0[m -> [32m341317[m bytes
+ CSS/6.1-Font-Properties/font-family.html           |  49 [32m+++++++++++++++[m
+ CSS/6.1-Font-Properties/font-size.html             |  41 [32m+++++++++++++[m
+ CSS/6.1-Font-Properties/goal.png                   | Bin [31m0[m -> [32m384925[m bytes
+ CSS/6.1-Font-Properties/index.html                 |  66 [32m+++++++++++++++++++++[m
+ CSS/6.1-Font-Properties/solution.html              |  59 [32m++++++++++++++++++[m
+ CSS/6.3 CSS Box Model/goal.png                     | Bin [31m0[m -> [32m978300[m bytes
+ CSS/6.3 CSS Box Model/index.html                   |  53 [32m+++++++++++++++++[m
+ CSS/6.3 CSS Box Model/solution.html                |  52 [32m++++++++++++++++[m
+ CSS/6.3+CSS+Box+Model.zip                          | Bin [31m0[m -> [32m822480[m bytes
+ .../assets/images/daenerys.jpeg                    | Bin [31m0[m -> [32m202196[m bytes
+ .../assets/images/shrek.jpg                        | Bin [31m0[m -> [32m54068[m bytes
+ CSS/6.4 Motivation Meme Project/goal.png           | Bin [31m0[m -> [32m4429522[m bytes
+ CSS/6.4 Motivation Meme Project/index.html         |  37 [32m++++++++++++[m
+ .../solution/assets/images/daenerys.jpeg           | Bin [31m0[m -> [32m202196[m bytes
+ .../solution/solution.css                          |  21 [32m+++++++[m
+ .../solution/solution.html                         |  22 [32m+++++++[m
+ CSS/6.4 Motivation Meme Project/style.css          |  16 [32m+++++[m
+ CSS/6.4+Motivation+Meme+Project.zip                | Bin [31m0[m -> [32m4603188[m bytes
+ CSS/7.0 CSS cascade/goal.png                       | Bin [31m0[m -> [32m1026108[m bytes
+ CSS/7.0 CSS cascade/index.html                     |  27 [32m+++++++++[m
+ CSS/7.0 CSS cascade/solution/solution.css          |  22 [32m+++++++[m
+ CSS/7.0 CSS cascade/solution/solution.html         |  24 [32m++++++++[m
+ CSS/7.0 CSS cascade/style.css                      |  24 [32m++++++++[m
+ CSS/7.0+CSS+Cascade.zip                            | Bin [31m0[m -> [32m862311[m bytes
+ 63 files changed, 939 insertions(+)
+
+[33mcommit 6fa1a48095e8f0815e51b7f02b44ffc474b31126[m
+Author: Rodolfo <rodolfowb32@gmail.com>
+Date:   Fri Jan 9 20:49:56 2026 +0300
+
+    Entrada de archivo final de HTML Birthday
+
+ HTML/3.4 Birthday Invite Project/index.html | 15 [32m+++++++++++++++[m
+ 1 file changed, 15 insertions(+)
+
+[33mcommit 2ef683117f8c416a24f52e229657fde64168fd26[m
+Author: Rodolfo <rodolfowb32@gmail.com>
+Date:   Fri Jan 9 16:01:06 2026 +0300
+
+    Mi primer commit de mis tareas de estudio de HTML
+
+ HTML/2.1 Heading Element/index.html         | 10 [32m+++++++++[m
+ HTML/2.2 Paragraph Element/index.html       | 25 [32m+++++++++++++++++++++[m
+ HTML/2.3 Void Elements/index.html           | 32 [32m++++++++++++++++++++++++++[m
+ HTML/2.4 Movie Ranking Project/index.html   | 30 [32m+++++++++++++++++++++++++[m
+ HTML/3.0 List Elements/index.html           | 35 [32m+++++++++++++++++++++++++++++[m
+ HTML/3.1 Nesting and Indentation/index.html | 28 [32m+++++++++++++++++++++++[m
+ HTML/3.2 Anchor Elements/index.html         | 11 [32m+++++++++[m
+ HTML/3.3 Image Elements/index.html          | 10 [32m+++++++++[m
+ 8 files changed, 181 insertions(+)

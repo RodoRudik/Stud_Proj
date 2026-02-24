@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mondrian Project</title>
+  <style>
+    /* 
+    Write your CSS here 
+    Gap Colour: #000
+    White: #F0F1EC
+    Red: #E72F24
+    Black: #232629
+    Blue: #004592
+    Yellow: #F9D01E
+
+    For dimensions, see dimensions.png image.
+    HINT: Remember you can't change the properties of grid lines.
+    But grid lines are transparent!
+    */
+    body {
+      display: grid;
+      background-color: white;      
+      justify-content: center;
+    }
+    .container{      
+      background-color: #F0F1EC;
+      height: 748px;
+      width: 748px;                
+    }
+
+    .mondrian{
+      display: grid;
+      grid-template-columns: 320px 198px 153px 50px;
+      grid-template-rows: 414px 130px 1px 155px 20px;
+      gap: 9px;
+      background-color: #0f100a;            
+    }
+    .white1{
+      background-color: #F0F1EC;
+      grid-area: 1 / 2 / 2 / span 3;      
+    }
+    .white2{
+      background-color: #F0F1EC;
+      grid-area: 2 / 1 / span 5 /2;
+    }
+    .white3{
+      background-color: #F0F1EC;
+      grid-area: 2 / 2 / span 5 / span 2;
+    }
+    .white4{
+      background-color: #F0F1EC;
+      grid-area: 7 / 1 / span 7 / 2;
+    }
+    .white5{
+      background-color: #F0F1EC;
+      grid-area: 4 / 4 / span 10 / span 1;
+    }
+    .black2{
+      background-color: black;
+      grid-area: 3 / 4 / span 4 / 5;
+    }
+    .red{
+      background-color: #E72F24;
+    }
+    .blue{
+      background-color: #004592;
+      grid-area: 2 / 4 / 3 / 5;      
+    }
+    .yellow{
+      background-color: #F9D01E;
+      grid-area: 7 / 2 / span 7 / 3;
+    }
+    .black{
+      background-color: #232629;
+      grid-area: 7 / 3 / span 7 / 4;
+    }
+
+
+    
+  </style>
+</head>
+
+<body>
+  <!-- Write your HTML here -->
+   <div class="container">
+    <div class="mondrian">
+      <!--fila 1-->
+       <div class="red"></div>
+       <div class="white1"></div>       
+       <!--fila 2, 3 y 4-->
+       <div class="blue"></div>
+       <div class="white2"></div>
+       <div class="white3"></div>
+       <div class="black2"></div>       
+       
+       <!--fila 4-->
+       <div class="white4"></div>
+       <div class="yellow"></div>
+       <div class="black"></div>       
+       <div class="white5"></div>
+
+    </div>
+   </div>
+ 
+   
+</body>
+
+</html>
