@@ -1,0 +1,14 @@
+Pagina para todas las propiedades y trucos de diseño en CSS:
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+******************************************************************************************************
+
+pagina de ejemplos importantes en CSS del bootCamp:
+
+https://appbrewery.github.io/flex-layout/
+
+*****************************************************************************************************
+
+juego didactico para CSS
+
+https://appbrewery.github.io/flexboxfroggy/#es

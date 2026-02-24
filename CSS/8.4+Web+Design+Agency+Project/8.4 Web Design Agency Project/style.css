@@ -1,0 +1,62 @@
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 50px 50px 0 50px;
+  background-color: #faf9f6;
+  display: flex;
+  flex-direction:column;  
+  min-height: 95vh;  
+}
+.main {
+  flex: 1;    
+}
+h1 {
+  font-size: 5rem;
+}
+footer {
+  text-align: right;
+  color: midnightblue;
+
+}
+
+
+/*modificaciones responsivas*/
+.title-image /* modifica a todas las imagenes*/{
+  height: 100px;/*altura modificada*/
+  float: left;/*las hace flotar a la izquierda para que eltexto este alrededor*/
+  margin-right: 50px;/*les da un margen de distancia entre ellas*/
+}
+.card/*clase que modifica a los textos e imagines*/ {
+  width: 45%;/*les da un ancho del 45% en su padding de su caja*/
+}
+/*hago flotar cada una a un lado para que ocupen la misma linea horizontal*/
+.left {
+  float: left;  
+}
+.right {
+  float: right;
+}
+.creative{/*clase que modifica el color de una palabra en el titulo*/
+  color: rgb(112, 25, 41);/*color modificado*/
+}
+/*diseño responsivo con query media para que mantengan su estado al disminuir la pantalla*/
+ @media (max-width: 680px){
+  .logo {
+    width: 100px;/*modifico el tamaño del logo*/
+  }
+  h1 {
+    font-size: 3.5rem;/*modifico el tamaño del titulo*/
+    text-align: center;/*lo centro*/
+  }
+  .card {
+    width: 100%;/*les doy un ancho del 100% para que ocupen toda la pantalla*/
+    display: block;/*los muestro en bloque*/
+    margin-bottom: 50px;/*les doy un margen inferior para que no queden pegados*/
+    text-align: justify;/*justifico el texto*/
+  }  
+  .card img{    
+    margin-bottom: 30px;/*les doy un margen inferior a las imagenes para que no queden pegadas al texto*/
+    width: 100%;/*les doy un ancho del 100% para que ocupen toda la pantalla*/
+    display: block;/*los muestro en bloque*/
+    object-fit: cover;/*hago que la imagen se ajuste al contenedor sin deformarse*/
+  }
+ }

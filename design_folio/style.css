@@ -1,0 +1,111 @@
+/*Hero presentacion*/
+.hero {
+    background-image: url('./images/profile_re.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.welcome {    
+    color: rgb(56, 73, 201);
+    padding: 20px;    
+    text-align: center;
+    font-family: "Caveat", cursive;
+}
+.hero h1  {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 1.5rem;
+    font-family: "Caveat", cursive;
+}
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+/*About me section*/
+.aboutme img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin-top: 50px;    
+}
+.hola {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4ED7F1;
+    font-family: "IBM Plex Serif", serif;
+}
+.aboutme p {
+    font-size: 1.2rem;
+    color: #333;
+    font-family: "IBM Plex Serif", serif;
+}
+
+/*skills section*/
+.tercerapage{
+    display: block;
+    unicode-bidi: isolate;
+    margin-top: 50px;
+    text-align: center;
+}
+.tercerapage h2 {
+    color: #4ED7F1;
+    font-family: "IBM Plex Serif", serif;
+}
+.tabla {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: repeat(1, 1fr);
+    width: 50%;
+    text-align: left;
+    row-gap: 2rem;  
+    margin: 100px auto 0px;  
+}
+.text-img h3 {
+    color: #ACE2E1;
+    font-family: "IBM Plex Serif", serif;
+}
+.text-img p {    
+    font-family: "IBM Plex Serif", serif;
+}
+/*contact section*/
+.final {
+    font-family: "IBM Plex Serif", serif;
+}
+.final h1{
+    color: #4ED7F1;
+}
+.final h3 {
+    margin-top: 20px;
+    color: #ACE2E1;
+    font-size: 18px;
+}
+.final p {
+    margin-top: 20px;
+    
+}
+.final button {
+    background-color: #4ED7F1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+/*footer*/
+footer {
+    background-color: #4ED7F1;
+    font-family: "IBM Plex Serif", serif;
+     color: #ACE2E1;
+}
