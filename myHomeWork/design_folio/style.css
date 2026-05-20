@@ -1,28 +1,59 @@
 /*Hero presentacion*/
+/* Hero Section con Video */
 .hero {
-    background-image: url('./images/profile_re.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: center;
-    height: 100vh;
+    position: relative; /* Necesario para posicionar el video absolutamente dentro */
+    height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+    width: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
+    overflow: hidden; /* Evita scrollbars si el video se sale un poco */
 }
-.welcome {    
-    color: rgb(56, 73, 201);
-    padding: 20px;    
+
+/* Estilo del Video de Fondo */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Clave: hace que el video cubra todo sin deformarse */
+    z-index: -1; /* Lo envía al fondo */
+}
+
+/* Capa oscura opcional (Overlay) para mejorar legibilidad del texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Negro al 40% de opacidad */
+    z-index: 0;
+}
+
+/* Contenido del Texto (Welcome) */
+.welcome { 
+    position: relative; /* Para que quede sobre el overlay */
+    z-index: 1;
+    color: white; /* Cambiamos a blanco para que contraste con el video */
+    padding: 20px; 
     text-align: center;
     font-family: "Caveat", cursive;
 }
-.hero h1  {
+
+.hero h1 {
     font-size: 4rem;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para leer mejor */
 }
+
 .hero p {
     font-size: 1.5rem;
-    font-family: "Caveat", cursive;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
+
+/* Responsive */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 2.5rem;
@@ -31,10 +62,11 @@
         font-size: 1.2rem;
     }
 }
+
 /*About me section*/
 .aboutme img{
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 180px;
     border-radius: 50%;
     margin-bottom: 20px;
     margin-top: 50px;    

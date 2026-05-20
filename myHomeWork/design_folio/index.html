@@ -15,18 +15,29 @@
 </head>
 
 <body>
-    <!--titulo-->
-    <section id="title" class="hero"> 
-        <div class="welcome">
+        <!-- Hero Section -->
+    <section class="hero">
+        <!-- Video de fondo -->
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="./videoHero/47521b94-6ac7-4ce9-ab42-989bed747bf9.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+
+        <!-- Capa oscura opcional para que el texto se lea mejor -->
+        <div class="hero-overlay"></div>
+
+        <!-- Contenido del Hero (Texto) -->
+        <div class="welcome"> 
             <h1>Welcome to My Portfolio</h1>
             <p>I am Rodolfo and I would be delighted to work with you.</p>
-        </div>    
+        </div>
     </section>
+    
     
     <!--about me-->
     <section id="resume" class="aboutme">
         <div class="p-5 text-center bg-body-tertiary rounded-3"> 
-            <img src="./images/rodo.png" alt="foto de rodolfo, moreno de cabello rizado">
+            <img src="./images/rodo.jpg" alt="foto de rodolfo, moreno de cabello rizado">
             <h1 class="hola">Hello</h1> 
             <p class="col-lg-8 mx-auto fs-5 text-muted">&#x1F44B,I am a former assistant physics professor at the Technological University of Havana (CUJAE), now transitioning into software development as a junior programmer. I bring enthusiasm, fresh ideas, and a strong desire to grow and contribute to meaningful projects.&#x1F680</p> 
             <div class="d-inline-flex gap-2 mb-5">
@@ -79,55 +90,7 @@
         </div>
     </section>
 
-        <!-- Projects Section -->
-    <section id="projects">
-        <div class="projects-container">
-            <h2>My Projects</h2>
-            <div class="projects-grid">
-                
-                <!-- Proyecto 1 -->
-                <article class="project-card">
-                    <div class="project-img">
-                        <!-- Usa una captura de pantalla de tu proyecto -->
-                        <img src="./images/project-placeholder.png" alt="Captura de pantalla del proyecto 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>Name of Project 1</h3>
-                        <p>A brief description of what this project does. Built with HTML, CSS, and JavaScript.</p>
-                        <div class="tech-stack">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JS</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank" class="btn-primary">Live Demo</a>
-                            <a href="#" target="_blank" class="btn-secondary">GitHub Code</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Proyecto 2 (Ejemplo con Playwright) -->
-                <article class="project-card">
-                    <div class="project-img">
-                        <img src="./images/project-playwright.png" alt="Automated testing dashboard">
-                    </div>
-                    <div class="project-info">
-                        <h3>E2E Testing Suite</h3>
-                        <p>Automated end-to-end tests for a web application using Playwright and JavaScript.</p>
-                        <div class="tech-stack">
-                            <span>Playwright</span>
-                            <span>Node.js</span>
-                            <span>Git</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" target="_blank" class="btn-primary">View Repo</a>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
+    
 
     <!--contact-->    
     <section class="final">
