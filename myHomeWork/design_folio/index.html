@@ -15,54 +15,151 @@
 </head>
 
 <body>
-    <!--titulo-->
-    <section id="title" class="hero"> 
-        <div class="welcome">
-            <h1>I'm Rodolfo</h1>
-            <p>I am a junior programer</p>
-        </div>    
+        <!-- Hero Section -->
+    <section class="hero">
+        <!-- Video de fondo -->
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="./videoHero/47521b94-6ac7-4ce9-ab42-989bed747bf9.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+
+        <!-- Capa oscura opcional para que el texto se lea mejor -->
+        <div class="hero-overlay"></div>
+
+        <!-- Contenido del Hero (Texto) -->
+        <div class="welcome"> 
+            <h1>Welcome to My Portfolio</h1>
+            <p>I am Rodolfo and I would be delighted to work with you.</p>
+        </div>
     </section>
+    
     
     <!--about me-->
     <section id="resume" class="aboutme">
         <div class="p-5 text-center bg-body-tertiary rounded-3"> 
-            <img src="./images/rodo.png" alt="foto de rodolfo, moreno de cabello rizado">
+            <img src="./images/rodo.jpg" alt="foto de rodolfo, moreno de cabello rizado">
             <h1 class="hola">Hello</h1> 
-            <p class="col-lg-8 mx-auto fs-5 text-muted">&#x1F44B,I am a former assistant physics professor at the Technological University of Havana (CUJAE), now transitioning into software development as a junior programmer. I bring enthusiasm, fresh ideas, and a strong desire to grow and contribute to meaningful projects.&#x1F680</p> 
+            <p class="col-lg-8 mx-auto fs-5 text-muted">I am a former Assistant Professor of Physics at the 
+                Technological University of Havana (CUJAE), currently transitioning into Full-Stack software 
+                and application development, with a focus on automated testing using Playwright. I bring enthusiasm, 
+                fresh perspectives, and a strong drive to grow and contribute to impactful projects.
+            </p> 
             <div class="d-inline-flex gap-2 mb-5">
             </div> 
         </div>
 
     </section>  
     
-    
-    <!--skills-->
+       <!--skills-->
     <section id="skills">
         <div class="tercerapage">
             <h2>Skills</h2>
-            <div class="tabla">
-                <div class="img-text">                              
-                    <img src="./images/laptop-y-ordenador-portatil-imagen-animada-0029.gif" alt="loro frente a una laptop">                        
+            <!-- Cambiamos 'tabla' por 'skills-container' para ser más descriptivos -->
+            <div class="skills-container">
+                
+                <!-- Tarjeta 1: Developer -->
+                <div class="skill-card">
+                    <div class="img-wrapper">                              
+                        <img src="./images/laptop-y-ordenador-portatil-imagen-animada-0029.gif" alt="loro frente a una laptop">                        
+                    </div>
+                    <div class="text-content">
+                        <h3>Designer & Developer</h3>
+                        <p>I discovered programming in my first year of university, and I was immediately captivated by this world. 
+                            Currently, I am honing my skills daily to become a Full Stack Web Developer and automated testing using Playwright.
+                        </p>
+                    </div>
                 </div>
-                <div class="text-img">
-                    <h3>Designer & Developer</h3>
-                    <p>I discovered programming in my first year of university, and I was immediately captivated by this world. Currently, I am honing my skills daily to become a Full Stack Web Developer.</p>
-                </div>
-                <div class="img-text">
-                    <img src="./images/traductor-online.png" width="150" alt="imagen de traduccion">                        
-                </div>
-                <div class="text-img">                        
-                    <h3>Lenguage skills</h3>                        
-                    <p>I studied English at the university level and can communicate effectively. Currently residing in Saint Petersburg, Russia, I also use Russian for daily communication.</p>                    
+
+                <!-- Tarjeta 2: Languages -->
+                <div class="skill-card">
+                    <div class="img-wrapper">
+                        <img src="./images/traductor-online.png" alt="imagen de traduccion">                        
+                    </div>
+                    <div class="text-content">                        
+                        <h3>Language skills</h3>                        
+                        <p>I studied English at the university level and can communicate effectively. Currently residing in Saint Petersburg, Russia, I also use Russian for daily communication.</p>                    
+                    </div>
                 </div>                
-                <div class="img-text">
-                    <img src="./images/argento-rodo.jpg" width="200" alt="chico latino con un mate en la mano sentado en las montañas con su perro y un dron">             
+
+                <!-- Tarjeta 3: Hobbies -->
+                <div class="skill-card">
+                    <div class="img-wrapper">
+                        <img src="./images/argento-rodo.jpg" alt="chico latino con un mate en la mano sentado en las montañas con su perro y un dron">             
+                    </div>
+                    <div class="text-content">                        
+                        <h3>Hobbies & Passions</h3>                        
+                        <p>I am passionate about science, outdoor activities, sports, animals, and engaging conversations.</p>                    
+                    </div>
                 </div>
-                <div class="text-img">                        
-                    <h3>Hobbies & Passions</h3>                        
-                    <p>I am passionate about science, outdoor activities, sports, animals, and engaging conversations.</p>                    
-                </div>
+
             </div>            
+        </div>
+    </section>
+
+        <!-- Projects Section -->
+    <section id="projects">
+        <div class="projects-container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Proyecto 1 -->
+                <article class="project-card">
+                    <div class="project-img">
+                        <!-- Usa una captura de pantalla de tu proyecto -->
+                        <img src="./images/frase_project.jpg" alt="Captura de pantalla del proyecto 1 generador de frases">
+                    </div>
+                    <div class="project-info">
+                        <h3>Phrase Generator</h3>
+                        <p>A random inspirational phrase generator. Built with HTML, CSS, and JavaScript.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="./otros/FrasGenerator/index.html" target="_blank" class="btn-primary">see project</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2 (Simon Game) -->
+                <article class="project-card">
+                    <div class="project-img">
+                        <img src="./images/simon_game.jpg" alt="Simon Game">
+                    </div>
+                    <div class="project-info">
+                        <h3>Simon Game</h3>
+                        <p>A classic memory game built with HTML, CSS, and JavaScript.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="./otros/SimonGame_challengPersonal/index.html" target="_blank" class="btn-primary">see project</a>
+                        </div>
+                    </div>
+                </article>
+                <!-- Proyecto 3 (Sound Board) -->
+                <article class="project-card">
+                    <div class="project-img">
+                        <img src="./images/sound_board.jpg" alt="Sound Board">
+                    </div>
+                    <div class="project-info">
+                        <h3>Sound Board</h3>
+                        <p>A fun sound board with various audio clips. Built with HTML, CSS, and JavaScript.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="./otros/SoundBoard/index .html" target="_blank" class="btn-primary">see project</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
         </div>
     </section>
 
@@ -74,8 +171,19 @@
             </svg> 
             <h1 class="text">Get in Touch</h1>
             <h3>If you're looking for a fun and effective approach to your websites.</h3> 
-            <p class="col-lg-6 mx-auto mb-4">Do you seek a fun, modern, and inclusive design for your shop or website? Let's discuss. We can develop the website you envision according to your requirements.</p> 
-            <button class="btn btn px-6 mb-8" type="button">Contact Me</button> 
+            <p class="col-lg-6 mx-auto mb-4">Looking for a fresh, results-driven approach to your web projects?
+                Need a sleek, modern design that also guarantees flawless performance? Let's connect. We'll bring 
+                your vision to life with a custom-built site that fits your exact goals.
+            </p> 
+            <!-- Botones de contacto -->
+           <div class="contact-wrapper">
+               <a href="https://t.me/@Fito_93" target="_blank" class="btn-contact">
+                   <img src="./images/telegram-icon.jpg" alt="Icono de Telegram" class="contact-icon"> Contact me on Telegram
+               </a>
+               <a href="mailto:rodolfowb32@gmail.com" class="btn-contact">
+                   <img src="./images/email-icon.jpg" alt="Icono de Email" class="contact-icon"> Send Email
+               </a>
+           </div>
         </div>
     </section>
 
@@ -88,15 +196,15 @@
             <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
         </li> 
         <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">Features</a>
+            <a href="#skills" class="nav-link px-2 text-body-secondary">Skills</a>
         </li> 
         <li class="nav-item">
-            <a href="#" class="nav-link px-2 text-body-secondary">Pricing</a>
+            <a href="#projects" class="nav-link px-2 text-body-secondary">Projects</a>
         </li>                 
     </ul> 
     
     <!-- Texto de Copyright -->
-    <p class="text-body-secondary text-center mb-0">© 2025 Rodolfo Espinosa</p>
+    <p class="text-body-secondary text-center mb-0">© 2026 Rodolfo Espinosa</p>
     
 </footer>  
 </body>

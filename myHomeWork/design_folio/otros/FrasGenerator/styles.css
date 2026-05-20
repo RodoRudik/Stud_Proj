@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Esto evita que padding/width se desborden */
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden; /*Evita scroll horizontal indeseado */
+}/*todod lo anterior ayuda a corregir detalles de la imagen 
+de fondo para que ocupe toda la hoja del navegador*/
+
+#fondo {
+    background-image: url("./images/libros.png");
+    background-size: cover;        /* La imagen cubre todo el área */
+    background-position: center;   /* Centra la imagen */
+    background-repeat: no-repeat;  /* Evita que se repita */
+    background-attachment: fixed;  /* Opcional: fija la imagen al hacer scroll */
+    display: grid;/*creacion del padre a grid*/
+    grid-template-rows: auto auto;/*creacion de dos filas*/
+    gap: 2rem; /*espacio entre los contenedores*/
+    justify-content: center;    
+    align-items: center;   
+    min-height: 100vh;  /*CLAVE: usa min-height, no height */
+    width: 100%;        /*Asegura ancho completo */
+    padding: 1rem;  
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;        
+}
+
+h2 {
+    text-align: center;
+    color: #A2CB8B; 
+    text-shadow: 2px 2px 4px black; /*Agrega sombra al texto para mejor legibilidad*/
+    font-family: 'Libre Baskerville', serif;   
+}
+
+p {
+    text-align: end;
+    color: #C7EABB;
+    text-shadow: 1px 1px 2px black; /*Agrega sombra al texto para mejor legibilidad*/
+    font-family: 'Winky Sans',sans-serif;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;/*hace que bajen en pantallas pequeñas*/
+    gap: 0.8rem;/*espacio entre botones*/
+    justify-content: center;
+    align-items: center;        
+}
+
+button {
+    background-color: transparent;
+    color: antiquewhite;
+    border: solid 2px #A2CB8B;
+    border-radius: 10px;
+    font-family: 'canvia', serif;
+    font-size: 16px;
+    padding: 6px 10px; 
+    cursor: pointer;/*hace que el cursor cambie a mano*/
+    transition: 0.3s ease;/**crea un efecto de transicion para el hover*/   
+}
+
+button:hover {/*hace que el boton cambie de color al acercar un puntero*/
+    background-color: #A2CB8B;
+    color: black;
+    transform: scale(1.05);/*da la sensacion de aumentar de tamaño*/     
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: #666;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    #fondo {
+        font-size: 2rem;
+    }
+    .button-container {
+        flex-direction: column;/*para que los botones sean una columna en moviles*/
+        align-items: center;        
+    }
+}
+
+#contador {
+    color: #C7EABB;
+    font-size: 16px;
+}
