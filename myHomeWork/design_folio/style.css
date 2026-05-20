@@ -297,6 +297,37 @@
     cursor: pointer;
     border-radius: 5px;
 }
+/* Contact Buttons */
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espacio entre botones */
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-contact {
+    background-color: #4ED7F1;
+    color: white;
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: "IBM Plex Serif", serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn-contact:hover {
+    background-color: #3bc0db;
+    transform: translateY(-2px);
+}
+.contact-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    vertical-align: middle; /* Alinea el icono con el texto */
+}
 /*footer*/
 footer {
     background-color: #4ED7F1;
