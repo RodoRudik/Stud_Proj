@@ -65,9 +65,8 @@
 
 /*About me section*/
 .aboutme img{
-    width: 140px;
-    height: 180px;
-    border-radius: 50%;
+    width: 100px;   
+    border-radius: 28%;
     margin-bottom: 20px;
     margin-top: 50px;    
 }
