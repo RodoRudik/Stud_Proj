@@ -18,8 +18,8 @@
     <!--titulo-->
     <section id="title" class="hero"> 
         <div class="welcome">
-            <h1>I'm Rodolfo</h1>
-            <p>I am a junior programer</p>
+            <h1>Welcome to My Portfolio</h1>
+            <p>I am Rodolfo and I would be delighted to work with you.</p>
         </div>    
     </section>
     
@@ -35,34 +35,97 @@
 
     </section>  
     
-    
-    <!--skills-->
+       <!--skills-->
     <section id="skills">
         <div class="tercerapage">
             <h2>Skills</h2>
-            <div class="tabla">
-                <div class="img-text">                              
-                    <img src="./images/laptop-y-ordenador-portatil-imagen-animada-0029.gif" alt="loro frente a una laptop">                        
+            <!-- Cambiamos 'tabla' por 'skills-container' para ser más descriptivos -->
+            <div class="skills-container">
+                
+                <!-- Tarjeta 1: Developer -->
+                <div class="skill-card">
+                    <div class="img-wrapper">                              
+                        <img src="./images/laptop-y-ordenador-portatil-imagen-animada-0029.gif" alt="loro frente a una laptop">                        
+                    </div>
+                    <div class="text-content">
+                        <h3>Designer & Developer</h3>
+                        <p>I discovered programming in my first year of university, and I was immediately captivated by this world. Currently, I am honing my skills daily to become a Full Stack Web Developer.</p>
+                    </div>
                 </div>
-                <div class="text-img">
-                    <h3>Designer & Developer</h3>
-                    <p>I discovered programming in my first year of university, and I was immediately captivated by this world. Currently, I am honing my skills daily to become a Full Stack Web Developer.</p>
-                </div>
-                <div class="img-text">
-                    <img src="./images/traductor-online.png" width="150" alt="imagen de traduccion">                        
-                </div>
-                <div class="text-img">                        
-                    <h3>Lenguage skills</h3>                        
-                    <p>I studied English at the university level and can communicate effectively. Currently residing in Saint Petersburg, Russia, I also use Russian for daily communication.</p>                    
+
+                <!-- Tarjeta 2: Languages -->
+                <div class="skill-card">
+                    <div class="img-wrapper">
+                        <img src="./images/traductor-online.png" alt="imagen de traduccion">                        
+                    </div>
+                    <div class="text-content">                        
+                        <h3>Language skills</h3>                        
+                        <p>I studied English at the university level and can communicate effectively. Currently residing in Saint Petersburg, Russia, I also use Russian for daily communication.</p>                    
+                    </div>
                 </div>                
-                <div class="img-text">
-                    <img src="./images/argento-rodo.jpg" width="200" alt="chico latino con un mate en la mano sentado en las montañas con su perro y un dron">             
+
+                <!-- Tarjeta 3: Hobbies -->
+                <div class="skill-card">
+                    <div class="img-wrapper">
+                        <img src="./images/argento-rodo.jpg" alt="chico latino con un mate en la mano sentado en las montañas con su perro y un dron">             
+                    </div>
+                    <div class="text-content">                        
+                        <h3>Hobbies & Passions</h3>                        
+                        <p>I am passionate about science, outdoor activities, sports, animals, and engaging conversations.</p>                    
+                    </div>
                 </div>
-                <div class="text-img">                        
-                    <h3>Hobbies & Passions</h3>                        
-                    <p>I am passionate about science, outdoor activities, sports, animals, and engaging conversations.</p>                    
-                </div>
+
             </div>            
+        </div>
+    </section>
+
+        <!-- Projects Section -->
+    <section id="projects">
+        <div class="projects-container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Proyecto 1 -->
+                <article class="project-card">
+                    <div class="project-img">
+                        <!-- Usa una captura de pantalla de tu proyecto -->
+                        <img src="./images/project-placeholder.png" alt="Captura de pantalla del proyecto 1">
+                    </div>
+                    <div class="project-info">
+                        <h3>Name of Project 1</h3>
+                        <p>A brief description of what this project does. Built with HTML, CSS, and JavaScript.</p>
+                        <div class="tech-stack">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn-primary">Live Demo</a>
+                            <a href="#" target="_blank" class="btn-secondary">GitHub Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Proyecto 2 (Ejemplo con Playwright) -->
+                <article class="project-card">
+                    <div class="project-img">
+                        <img src="./images/project-playwright.png" alt="Automated testing dashboard">
+                    </div>
+                    <div class="project-info">
+                        <h3>E2E Testing Suite</h3>
+                        <p>Automated end-to-end tests for a web application using Playwright and JavaScript.</p>
+                        <div class="tech-stack">
+                            <span>Playwright</span>
+                            <span>Node.js</span>
+                            <span>Git</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank" class="btn-primary">View Repo</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
         </div>
     </section>
 
