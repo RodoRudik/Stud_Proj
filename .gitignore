@@ -3,5 +3,5 @@ autoTesting/ZPlaywright/PlayWrightJS-TS_RA/PlayWrightAutomation.zip
 
 # Ignorar dependencias y archivos pesados
 **/node_modules/
-*.zip
+*.zip!backend/EJS/4.0+EJS.zip
 .DS_Store
