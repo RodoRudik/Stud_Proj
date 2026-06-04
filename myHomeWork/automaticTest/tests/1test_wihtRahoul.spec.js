@@ -17,7 +17,7 @@ test('test mejorado con menos lineas de codigo que arriba, login correcto', asyn
     await page.locator('[type="submit"]').click();
 });
 
-test.only('test para capturar mensaje de error al iniciar sesión', async ({page}) => {
+test('test para capturar mensaje de error al iniciar sesión', async ({page}) => {
 
     await page.goto('https://practice.expandtesting.com/login');
     await page.locator('#username').fill('usuariosinvalido');
@@ -25,4 +25,29 @@ test.only('test para capturar mensaje de error al iniciar sesión', async ({page
     await page.locator('[type="submit"]').click();
     console.log(await page.locator('#flash').textContent());
     await expect(page.locator('#flash')).toContainText('Your username is invalid!');
+});
+
+test('test para escribir mal usuario y luego corregir', async ({page}) => {
+
+    const username = page.locator('#username');
+    const password = page.locator('#password');
+    const submitButton = page.locator('[type="submit"]');
+    
+
+
+    await page.goto('https://practice.expandtesting.com/login');
+    await username.fill('usuariosinvalido');
+    await password.fill('SuperSecretPassword!');
+    await submitButton.click();
+    await expect(page.locator('#flash')).toContainText('Your username is invalid!');
+    await username.fill('practice');
+    await password.fill('SuperSecretPassword!');
+    await submitButton.click();    
+    await expect(page.locator('#flash')).toContainText('You logged into a secure area!');
+});
+test.only('test para escoger accesorio de una tienda de accesorios', async ({page}) => {
+
+    await page.goto('https://practice.expandtesting.com/bookstore');
+    console.log(await page.locator(".card-title").nth(0).textContent());
+    console.log(await page.locator(".card-title").nth(2).textContent());
 });
