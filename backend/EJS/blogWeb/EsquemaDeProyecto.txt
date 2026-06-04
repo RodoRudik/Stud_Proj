@@ -1,0 +1,9 @@
+Archivo .ejs 'header'.
+Archivo .ejs con ´var nav´.
+archivo .ejs con 'footer'.
+archivo .ejs para el 'login' preguntar a chat gpt'
+archivo .ejs para el cuerpo completo de la pagina donde se escribe, y se puede agregar una fotografia y se da a publicar => preguntar a chat gpt.
+
+
+archivo css. para var nav y footer.
+archivo css parael cuerpo del blog.

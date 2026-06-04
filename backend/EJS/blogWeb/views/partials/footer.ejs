@@ -1,0 +1,58 @@
+</main>
+<!-- Footer content, insertar lineas aca-->
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- Lado Izquierdo: Fecha y Autor -->
+        <div class="footer-left">
+            <span class="footer-date" id="current-date"></span>
+            <span class="footer-author">
+                Developed by <strong>Rodolfo Espinosa R.</strong> |
+                <a href="mailto:rodolfowb32@gmail.com">rodolfowb32@gmail.com</a>
+            </span>
+        </div>
+
+        <!-- Centro: Iconos de Redes Sociales -->
+        <div class="footer-center">
+            <a href="https://t.me/Fito_93" target="_blank" class="social-icon" aria-label="Telegram">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="mailto:rodolfowb32@gmail.com" class="social-icon" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://instagram.com/[tu-usuario]" target="_blank" class="social-icon" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+        <!-- Lado Derecho: Copyright -->
+        <div class="footer-right">
+            <span>© <span id="copyright-year"></span> Digital Pen. All rights reserved.</span>
+        </div>
+
+    </div>
+
+    <!-- JavaScript para la fecha dinámica -->
+    <script>
+        // Mostrar fecha actual completa
+        const dateElement = document.getElementById('current-date');
+        const today = new Date();
+
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        };
+
+        // Formatear fecha en inglés (ej: "October 15, 2024")
+        const formattedDate = today.toLocaleDateString('en-US', options);
+        dateElement.textContent = formattedDate;
+
+        // Año para el copyright
+        const copyrightYear = document.getElementById('copyright-year');
+        copyrightYear.textContent = today.getFullYear();
+    </script>
+</footer>
+</body>
+
+</html>

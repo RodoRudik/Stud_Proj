@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Pen - Blog</title>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/styles/global.css">      
+    <link rel="stylesheet" href="/styles/header.css">     
+    <link rel="stylesheet" href="/styles/landing.css">    
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/login.css">
+    <link rel="stylesheet" href="/styles/writeBlog.css">    
+</head>
+<body>
+<header class="header">
+    <nav class="navbar">
+        <!-- Logo con icono de pluma -->
+        <a href="/" class="logo">
+            <i class="fas fa-pen-fancy"></i>
+            <span class="logo-text">Digital Pen</span>
+        </a>
+
+        <!-- Menú de navegación -->
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="/blogs" class="nav-link">
+                    <i class="fas fa-book-open"></i>
+                    Published Blogs
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/login" class="nav-link">
+                    <i class="fas fa-user"></i>
+                    Login
+                </a>
+            </li>
+        </ul>
+
+        <!-- Menú hamburguesa para móvil -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<script>
+    // JavaScript para el menú responsive
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer click en un link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
+<main class="container">

@@ -1,0 +1,88 @@
+*Descripción del Proyecto
+El objetivo de este proyecto es crear una aplicación web de blog utilizando Node.js, Express.js y EJS. 
+La aplicación permitirá a los usuarios crear y ver publicaciones de blog. 
+Las publicaciones no persistirán entre sesiones, ya que no se utilizará ninguna base de datos 
+en esta versión de la aplicación. 
+El diseño será un aspecto importante de este proyecto para garantizar una buena experiencia de usuario.*/
+
+/*Entregables
+-Un proyecto de Node para el funcionamiento del sitio web
+-Incluyendo al menos un archivo EJS para la estructura del sitio web
+-Incluyendo al menos un archivo CSS para el diseño del sitio web*/
+
+
+/*Características
+-Creación de publicaciones: Los usuarios deben poder crear nuevas publicaciones.
+-Visualización de publicaciones: La página de inicio debe permitir al usuario ver todas sus publicaciones.
+-Actualización/Eliminación de publicaciones: Los usuarios deben poder editar y 
+eliminar publicaciones según sea necesario.
+-Estilo: La aplicación debe tener un buen diseño y ser responsiva, garantizando una buena 
+experiencia de usuario tanto en dispositivos de escritorio como móviles. */
+
+/*Requisitos técnicos
+-Node.js y Express.js: La aplicación será un servidor web construido utilizando Node.js y 
+Express.js. Express.js se encargará del enrutamiento y el middleware.
+-EJS: EJS se utilizará como motor de plantillas para generar HTML dinámico basado en el estado de la aplicación.*/
+
+/*Cronograma
+Hora 0: Planificación
+Reunir contenido e ideas de diseño, crear wireframes y maquetas. 
+Planificar cómo funcionará la aplicación, qué rutas podrían ser necesarias y qué páginas deben crearse.
+
+Hora 1: Configuración
+Configurar el repositorio del proyecto, inicializar la aplicación Node.js e instalar 
+las dependencias necesarias (Express.js, EJS).
+Crear la estructura de la aplicación, incluyendo rutas, vistas y archivos estáticos.
+Configurar el servidor Express.js y definir las rutas necesarias.
+
+Horas 2-3: Implementación de Funcionalidades
+Implementar la función de creación de publicaciones. Esto incluye crear el formulario 
+en la página de inicio y manejar el envío del formulario en el servidor.
+Implementar la función de visualización de publicaciones. Esto incluye mostrar todas 
+las publicaciones en la página de inicio.
+Implementar la función de edición de publicaciones. Esto incluye usar un formulario para 
+cargar la publicación de blog existente y permitir al usuario editarla y guardarla.
+Implementar la función de eliminación. Esto permite al usuario hacer clic en un botón y 
+eliminar la publicación de la página de inicio.
+Probar la aplicación para asegurar que la creación y visualización de publicaciones funcionen correctamente.
+
+Horas 4-5: Estilo y Pulido
+Dar estilo a la aplicación. Esto incluye crear un archivo CSS, vincularlo a 
+tus plantillas EJS y escribir CSS o usar Bootstrap/Flexbox/Grid para dar estilo a la aplicación.
+Probar la aplicación en diferentes dispositivos y navegadores para asegurar que el estilo funcione correctamente.
+Corregir cualquier error o problema que haya surgido durante las pruebas. */
+
+
+
+
+
+
+Voy a compartirte una captura de pantalla de una seccion de mi proyecto en VS code para que tengas una referencia de lo que deseo hacer. ES MUY IMPORTANTE QUE NO GENERES CODIGO HASTA QUE YO TE LO PIDA:
+- Como puedes observar en la imagen aun faltan archivos en mi carpeta que ire agregando mas adelante, por ahora solo quiero enfocarme en el headder.
+-en este headder.ejs quiero incluir los las hojas de estilo .css y los estilos de fuente, pero ademas quiero crear una barra de navegacion para la pagina en general,aca te doy caracteristicas de lo que deseo incluir en la barra de navegacion:
+      -en la esquina superior derecha debe tener un incono de una pluma y un tintero y al lado el Titulo de la 
+        pagina (ofreceme sugerencias de nombres).
+      -al lado de este icono debe tener 'blogs publicados', y al acercar el cursor cambiara de color las letras y 
+        al hacer click dirige a una seccion con la una lista de todos los blogs publicados y la fecha de 
+        publicacion al lado del titulo de la publicacion. 
+       lado del titulo. 
+       -En la esquina superior a la derecha debe aparecer 'iniciar sesion', para que el usuario escriba su 
+         nombre y contraseña. Y al confirmarse la entrada pueda acceder a una lista de todas sus 
+         publicaciones y la opcion de eliminar publicacion y la opcion de crear nuevo blog.
+       - todas estas opciones de la barra deben tener la animacion de que la letra cambie de color al acercar 
+         el cursor y dar senzacion de aumento. Ademas toda la barra deve estar delimitada por un fondo azul 
+         marino.
+ES MUY IMPORTANTE QUE NO CREES CODIGO PARA NINGUNA DE LAS SECCIONES QUE TENDRAN LOS BOTONES DE LA BARRA DE NAVEGACION Y SOLO TE CONCENTRES EN ENTREGAR UN ARCHIVO HTML PARA ESTE HEADER Y UN ARCHIVO .CSS PARA SU ESTYLO.
+-Si tienes alguna duda puedes hacerme preguntas antes de trabajar. Aca abajo de comparto el codigo base de mi header.ejs:
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Blog</title>
+    <style></style>
+</head>
+<header>
+    <!--codigo para la barra de navegacion-->
+</header>
+<main>

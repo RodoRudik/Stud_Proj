@@ -1,0 +1,15 @@
+<%- include('partials/header.ejs') %>
+<form class="blog-form" action="/publicar-blog" method="POST" enctype="multipart/form-data">
+        <h1>Crear nueva entrada</h1>
+
+        <label for="titulo">Título del Blog:</label>
+        <input type="text" id="titulo" name="titulo" placeholder="Escribe un título atractivo..." required>
+
+        <label for="cuerpo">Cuerpo del Blog:</label>
+        <textarea id="cuerpo" name="cuerpo" placeholder="Escribe aquí el contenido de tu blog..." required></textarea>
+
+        <label for="foto">Insertar fotografía:</label>
+        <input type="file" id="foto" name="foto" accept="image/*" required>
+
+        <button type="submit">Publicar Blog</button>
+</form>
