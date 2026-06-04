@@ -45,9 +45,17 @@ test('test para escribir mal usuario y luego corregir', async ({page}) => {
     await submitButton.click();    
     await expect(page.locator('#flash')).toContainText('You logged into a secure area!');
 });
-test.only('test para escoger accesorio de una tienda de accesorios', async ({page}) => {
+test('test para escoger accesorio de una tienda de accesorios', async ({page}) => {
 
     await page.goto('https://practice.expandtesting.com/bookstore');
     console.log(await page.locator(".card-title").nth(0).textContent());
     console.log(await page.locator(".card-title").nth(2).textContent());
+});
+test.only('test para escoger lista de productos de una tienda de accesorios', async ({page}) => {
+
+    await page.goto('https://practice.expandtesting.com/bookstore');
+    //await page.waitForLoadState('networkidle');//dos maneras de utilizar esta linea
+    await page.locator("h5.card-title").first().waitFor();//esto hace lo mismo que la linea comentada arriba
+    console.log(await page.locator("h5.card-title").allTextContents());
+    
 });
