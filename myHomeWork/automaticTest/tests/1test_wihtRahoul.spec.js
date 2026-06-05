@@ -51,7 +51,7 @@ test('test para escoger accesorio de una tienda de accesorios', async ({page}) =
     console.log(await page.locator(".card-title").nth(0).textContent());
     console.log(await page.locator(".card-title").nth(2).textContent());
 });
-test.only('test para escoger lista de productos de una tienda de accesorios', async ({page}) => {
+test('test para escoger lista de productos de una tienda de accesorios', async ({page}) => {
 
     await page.goto('https://practice.expandtesting.com/bookstore');
     //await page.waitForLoadState('networkidle');//dos maneras de utilizar esta linea
