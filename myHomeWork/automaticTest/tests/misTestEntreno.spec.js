@@ -83,7 +83,7 @@ test('test con variantespara el register page', async ({page}) => {
 
 });
 
-test.only('test del register page correcto y cambio de url', async ({page}) => {
+test('test del register page correcto y cambio de url', async ({page}) => {
 
     const registerBox = page.locator('.card-body');
     const submitButton = page.locator('[type="submit"]');

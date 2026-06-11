@@ -22,7 +22,7 @@ test('test radio-button', async ({page}) => {
     expect(await page.locator("#tennis").isChecked()).toBe(false);
 });
 
-test.only('test tomar un string de una pagina regresar a la anterior y pegarlo en el username', async ({page}) => {
+test('test tomar un string de una pagina regresar a la anterior y pegarlo en el username', async ({page}) => {
     
     const userName = page.locator('#username');
     const password = page.locator('#password');
