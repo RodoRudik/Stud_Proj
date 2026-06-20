@@ -1,6 +1,6 @@
 import {test, expect} from '@playwright/test';
 
-test.only('take value from table and compare with the value of the alert', async ({page}) => {
+test('take value from table and compare with the value of the alert', async ({page}) => {
 
     const table = page.locator(".table-responsive");
     const rowsTable = page.locator(".table-responsive tbody tr");   
