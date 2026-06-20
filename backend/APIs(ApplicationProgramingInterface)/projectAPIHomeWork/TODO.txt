@@ -1,0 +1,59 @@
+Objetivos
+Desarrollar la comprensión de cómo integrar APIs públicas en proyectos web.
+Adquirir experiencia práctica en el uso de Express/Node.js para la programación del lado del servidor.
+Mejorar la comprensión de la comunicación cliente-servidor mediante el uso de Axios.
+Demostrar la capacidad para manipular, presentar y trabajar con datos obtenidos de APIs.
+Ideas de ejemplo
+Utilizar la JokeAPI para crear un sitio web que muestre al usuario un chiste personalizado según su nombre.
+Utilizar la API de OpenWeatherMap para crear un sitio web que indique al usuario si lloverá mañana en la ubicación que elija.
+Utilizar la Blockchain API para consultar el precio de una criptomoneda para el usuario.
+Utilizar la API de CocktailDB para crear un sitio web que ofrezca al usuario una receta de cóctel aleatoria, incluyendo imágenes 
+de la bebida.
+Utilizar la Open UV API para crear un sitio web basado en la ubicación de tu hogar que te indique si necesitas 
+aplicar protector solar hoy.
+Puntos extra por elegir tu propia API y crear algo original. A veces, decidirás usar una API y luego te darás cuenta de que no 
+funciona; eso es parte del proceso, ¡simplemente pasa a la siguiente e inténtalo de nuevo!
+
+
+Requisitos
+1. Elección de la API
+Explora la lista proporcionada y elige una API que sea de tu interés. Esta elección debe estar guiada por el potencial 
+para recuperar, manipular y presentar datos de manera significativa e interactiva. Recomiendo elegir una API que no 
+requiera autenticación y que tenga habilitado CORS. (¿Qué es CORS?)
+
+2. Planificación del proyecto
+Planifica tu proyecto a fondo, investigando la API elegida, sus características, los datos que proporcionará y cómo se 
+utilizará en tu aplicación web.
+
+3. Configuración del proyecto
+Configura un nuevo proyecto de Node.js utilizando Express.js.
+
+Incluye Axios para realizar peticiones HTTP.
+
+Incluye EJS para las plantillas.
+
+Asegúrate de que el proyecto cuente con una estructura organizada de directorios y archivos.
+
+4. Integración de la API
+Implementa al menos un endpoint GET para interactuar con la API elegida.
+
+Utiliza Axios para enviar peticiones HTTP a la API y gestionar las respuestas.
+
+5. Presentación de datos
+Diseña la aplicación para presentar los datos obtenidos de una manera amigable para el usuario. Utiliza HTML y CSS adecuados, 
+junto con un motor de plantillas como EJS.
+
+6. Gestión de errores
+Asegúrate de implementar el manejo de errores tanto para tu aplicación como para cualquier petición a la API. Puedes registrar 
+los errores en la consola, pero también puedes mostrar a los usuarios aquellos errores que sean relevantes para ellos.
+
+7. Documentación
+Incluye comentarios a lo largo de tu código para explicar tu lógica.
+
+8. Compartir el código
+Utiliza lo que has aprendido sobre GitHub para hacer commit y push de tu proyecto, y así poder compartirlo con otros 
+estudiantes en el área de preguntas y respuestas. ¡Me encantaría ver lo que has construido también! Puedes tuitearme a @yu_angela
+
+
+Include a Readme.md file that explains how to start your server, what commands are needed to 
+run your code. e.g. npm i  and then nodemon index.js

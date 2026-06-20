@@ -1,0 +1,84 @@
+<!-- Incluir header -->
+<%- include('partials/header') %>
+
+<!-- Sección de errores (solo se muestra si hay error) -->
+<% if (error) { %>
+  <div class="alert alert-error">
+    <strong>⚠️ Error:</strong> <%= error %>
+  </div>
+<% } %>
+
+<!-- Formulario de conversión -->
+<section class="exchange-form">
+  <form action="/convert" method="POST">
+    <!-- Fila superior: From, Swap y To -->
+    <div class="form-row">
+      <!-- Campo From -->
+      <div class="form-group">
+        <label for="from">From</label>
+        <select name="from" id="from" required>
+          <% currencies.forEach(currency => { %>
+            <option value="<%= currency.code %>" <%= currency.code === from ? 'selected' : '' %>>
+              <%= currency.code %> - <%= currency.name %>
+            </option>
+          <% }); %>
+        </select>
+      </div>
+
+      <!-- ✨ NUEVO: Botón Swap -->
+      <div class="swap-container">
+        <button type="button" id="swap-btn" class="btn-swap" title="Intercambiar monedas">
+          ⇄
+        </button>
+      </div>
+
+      <!-- Campo To -->
+      <div class="form-group">
+        <label for="to">To</label>
+        <select name="to" id="to" required>
+          <% currencies.forEach(currency => { %>
+            <option value="<%= currency.code %>" <%= currency.code === to ? 'selected' : '' %>>
+              <%= currency.code %> - <%= currency.name %>
+            </option>
+          <% }); %>
+        </select>
+      </div>
+    </div>
+
+    <!-- Campo Amount -->
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input 
+        type="number" 
+        name="amount" 
+        id="amount" 
+        value="<%= amount %>" 
+        min="0.01" 
+        step="0.01" 
+        required
+      >
+    </div>
+
+    <!-- Botón Convert -->
+    <button type="submit" class="btn-convert">Convert</button>
+  </form>
+</section>
+
+<!-- Sección de resultados (solo se muestra si hay resultado) -->
+<% if (result !== null) { %>
+  <section class="result-section">
+    <div class="result-main">
+      <span class="result-amount"><%= amount %> <%= from %></span>
+      <span class="result-equals">=</span>
+      <span class="result-converted"><%= result %> <%= to %></span>
+    </div>
+    
+    <div class="result-details">
+      <p><strong>Rate:</strong> 1 <%= from %> = <%= rate %> <%= to %></p>
+      <p><strong>Last Update:</strong> <%= lastUpdate %></p>
+    </div>
+  </section>
+<% } %>
+
+<!-- Incluir footer -->
+<%- include('partials/footer') %>
