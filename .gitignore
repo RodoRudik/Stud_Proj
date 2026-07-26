@@ -6,3 +6,5 @@ autoTesting/ZPlaywright/PlayWrightJS-TS_RA/PlayWrightAutomation.zip
 *.zip!backend/EJS/4.0+EJS.zip
 .DS_Store
 autoTesting/ZPlaywright/PlayWrightJS-TS_RA/
+node_modules/
+.env
