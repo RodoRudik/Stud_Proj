@@ -28,6 +28,7 @@ db.query("SELECT country_code FROM visited_countries", (err, res) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+
 app.get("/", async (req, res) => {
   const result = await db.query("SELECT country_code FROM visited_countries");
   let countries = [];
@@ -36,6 +37,24 @@ app.get("/", async (req, res) => {
   });
   console.log(result.rows);
   res.render("index.ejs", { countries: countries, total: countries.length });
+});
+
+
+// ahora vamos a crear un post para recibir el nombre del pais, buscar el codigo del pais y mostrarlo en el mapa
+app.post("/add", async (req, res) => {
+  const input = req.body["country"];//aqui recibimos el nombre del pais
+  const result = await db.query(//aqui buscamos el codigo del pais
+    "SELECT country_code FROM countries WHERE country_name = $1",
+    [input]
+  );
+  if (result.rows.length !== 0) {//si el codigo existe mostramos el codigo
+    const data = result.rows[0];//aqui mostramos el codigo
+    const countryCode = data.country_code;
+    await db.query("INSERT INTO visited_countries (country_code) VALUES ($1)", [
+      countryCode,
+    ]);//aqui insertamos el codigo en la tabla visited_countries
+    res.redirect("/");//y redirigimos al index
+  }
 });
 
 app.listen(port, () => {
