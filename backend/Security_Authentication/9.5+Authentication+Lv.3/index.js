@@ -4,6 +4,7 @@ import pg from "pg";
 import bcrypt from "bcrypt";
 import passport from "passport";
 import { Strategy } from "passport-local";
+import GoogleStrategy from "passport-google-oauth2";
 import session from "express-session";
 import env from "dotenv";
 
@@ -29,6 +30,7 @@ app.use(passport.session());
 const db = new pg.Client({
   user: process.env.PG_USER,
   host: process.env.PG_HOST,
+  dbuser: process.env.PG_DB_USER,
   database: process.env.PG_DATABASE,
   password: process.env.PG_PASSWORD,
   port: process.env.PG_PORT,
@@ -64,6 +66,21 @@ app.get("/secrets", (req, res) => {
     res.redirect("/login");
   }
 });
+
+app.get(
+  "/auth/google", 
+  passport.authenticate("google", {
+    scope: ["profile", "email"],
+  })
+);
+
+app.get(
+  "/auth/google/secrets", 
+  passport.authenticate("google", {
+    successRedirect: "/secrets",
+    failureRedirect: "/login",
+  })
+);
 
 app.post(
   "/login",
@@ -135,6 +152,30 @@ passport.use(
       }
     } catch (err) {
       console.log(err);
+    }
+  })
+);
+
+passport.use(
+  "google", 
+  new GoogleStrategy({
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/google/secrets",
+    userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
+  }, 
+  async(accessToken, refreshToken, profile, cb) => {
+    console.log(profile);
+    try {
+      const result = await db.query("SELECT * FROM users WHERE email = $1 ", [profile.email]);
+      if (result.rows.length === 0) {
+        const newUser = await db.query( "INSERT INTO users (email, password) VALUES ($1, $2)", [profile.email, "google"]);
+        cb(null, newUser.rows[0]);
+      } else {
+        cb(null, result.rows[0]);
+      }
+    } catch (err) {
+      cb(err);
     }
   })
 );
