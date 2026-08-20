@@ -10,7 +10,7 @@ import env from "dotenv";
 
 const app = express();
 const port = 3000;
-const saltRounds = 10;
+const saltRounds = 18;
 env.config();
 
 app.use(
@@ -28,6 +28,7 @@ app.use(passport.session());
 
 const db = new pg.Client({
   user: process.env.PG_USER,
+  userdatabase: process.env.PG_DB_USER,
   host: process.env.PG_HOST,
   database: process.env.PG_DATABASE,
   password: process.env.PG_PASSWORD,
@@ -56,11 +57,25 @@ app.get("/logout", (req, res) => {
   });
 });
 
-app.get("/secrets", (req, res) => {
+app.get("/secrets", async (req, res) => {
+  console.log(req.user);
+  //TODO: Update this to pull in the user secret to render in secrets.ejs
   if (req.isAuthenticated()) {
-    res.render("secrets.ejs");
-
-    //TODO: Update this to pull in the user secret to render in secrets.ejs
+    try {
+      const result = await db.query(
+        `SELECT secret FROM users WHERE email = $1`,
+        [req.user.email]
+      );
+      console.log(result);
+      const secret = result.rows[0].secret;
+      if (secret) {
+        res.render("secrets.ejs", { secret: secret });
+      } else {
+        res.render("secrets.ejs", {secret: "You Cant write a secret yet, please submit one!"});
+      }
+    } catch (err) {
+      console.log(err);
+    }
   } else {
     res.redirect("/login");
   }
@@ -68,6 +83,13 @@ app.get("/secrets", (req, res) => {
 
 //TODO: Add a get route for the submit button
 //Think about how the logic should work with authentication.
+app.get("/submit", function (req, res) {
+  if (req.isAuthenticated()) {
+    res.render("submit.ejs");
+  } else {
+    res.redirect("/login");
+  }  
+});
 
 app.get(
   "/auth/google",
@@ -95,6 +117,7 @@ app.post(
 app.post("/register", async (req, res) => {
   const email = req.body.username;
   const password = req.body.password;
+  const hash = await bcrypt.hash(password, saltRounds);
 
   try {
     const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
@@ -102,21 +125,19 @@ app.post("/register", async (req, res) => {
     ]);
 
     if (checkResult.rows.length > 0) {
-      req.redirect("/login");
+      return res.redirect("/login");
     } else {
-      bcrypt.hash(password, saltRounds, async (err, hash) => {
-        if (err) {
-          console.error("Error hashing password:", err);
-        } else {
-          const result = await db.query(
-            "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *",
+      const result = await db.query(
+        "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *",
             [email, hash]
           );
           const user = result.rows[0];
-          req.login(user, (err) => {
-            console.log("success");
-            res.redirect("/secrets");
-          });
+          req.login(user, (loginError) => {
+           if (loginError) {
+              return next(loginError);
+            }
+          return res.redirect("/secrets");
+          })          
         }
       });
     }
@@ -127,6 +148,19 @@ app.post("/register", async (req, res) => {
 
 //TODO: Create the post route for submit.
 //Handle the submitted data and add it to the database
+app.post("/submit", async function (req, res) {
+  const submittedSecret = req.body.secret;
+  console.log(req.user);
+  try {
+    await db.query(`UPDATE users SET secret = $1 WHERE email = $2`, [
+      submittedSecret, 
+      req.user.email,
+    ]);
+    res.redirect("/secrets");
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 passport.use(
   "local",
@@ -169,8 +203,7 @@ passport.use(
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     async (accessToken, refreshToken, profile, cb) => {
-      try {
-        console.log(profile);
+      try {        
         const result = await db.query("SELECT * FROM users WHERE email = $1", [
           profile.email,
         ]);
