@@ -28,7 +28,6 @@ app.use(passport.session());
 
 const db = new pg.Client({
   user: process.env.PG_USER,
-  userdatabase: process.env.PG_DB_USER,
   host: process.env.PG_HOST,
   database: process.env.PG_DATABASE,
   password: process.env.PG_PASSWORD,
@@ -48,7 +47,7 @@ app.get("/register", (req, res) => {
   res.render("register.ejs");
 });
 
-app.get("/logout", (req, res) => {
+app.get("/logout", (req, res, next) => {
   req.logout(function (err) {
     if (err) {
       return next(err);
@@ -115,34 +114,36 @@ app.post(
 );
 
 app.post("/register", async (req, res) => {
-  const email = req.body.username;
+  const email = req.body.username; // O req.body.email, según tu formulario EJS
   const password = req.body.password;
-  const hash = await bcrypt.hash(password, saltRounds);
 
   try {
-    const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [
-      email,
-    ]);
-
+    const checkResult = await db.query("SELECT * FROM users WHERE email = $1", [email]);
     if (checkResult.rows.length > 0) {
-      return res.redirect("/login");
+      res.redirect("/login"); // O muestra un error en EJS
     } else {
-      const result = await db.query(
-        "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *",
+      bcrypt.hash(password, saltRounds, async (err, hash) => {
+        if (err) {
+          console.error("Error hashing password:", err);
+        } else {
+          const result = await db.query(
+            "INSERT INTO users (email, password) VALUES ($1, $2) RETURNING *",
             [email, hash]
           );
           const user = result.rows[0];
-          req.login(user, (loginError) => {
-           if (loginError) {
-              return next(loginError);
+          req.login(user, (err) => {
+            if (err) {
+              console.log(err);
+            } else {
+              res.redirect("/secrets");
             }
-          return res.redirect("/secrets");
-          })          
+          });
         }
       });
     }
   } catch (err) {
     console.log(err);
+    res.redirect("/register");
   }
 });
 
@@ -185,7 +186,7 @@ passport.use(
           }
         });
       } else {
-        return cb("User not found");
+        return cb(null, false, {message: "User not found"});
       }
     } catch (err) {
       console.log(err);
@@ -223,11 +224,16 @@ passport.use(
   )
 );
 passport.serializeUser((user, cb) => {
-  cb(null, user);
+  cb(null, user.id);
 });
 
-passport.deserializeUser((user, cb) => {
-  cb(null, user);
+passport.deserializeUser(async (id, cb) => {
+  try {
+    const result = await db.query("SELECT * FROM users WHERE id = $1", [id]);
+    cb(null, result.rows[0]);
+  } catch (err) {
+    cb(err);
+  }  
 });
 
 app.listen(port, () => {
